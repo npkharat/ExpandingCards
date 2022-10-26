@@ -1,0 +1,64 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Courier New', Courier, monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    width: 80vw;
+}
+
+.panel{
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    border-radius: 50px;
+    color: aliceblue;
+    cursor: pointer;
+    flex: 0.1;
+    position: relative;
+    margin: 25px;
+    transition: flex 0.7s ease-in;
+}
+
+.panel h3{
+    font-size: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+    
+}
+
+.panel.active{
+    flex:0.3;
+}
+
+.panel.active h3{
+    opacity: 1;
+    
+    transition: opacity 0.3s ease-in 0.5s;
+}
+
+@media(max-width:480px){
+    .container{
+        width: 90vw;
+        
+    }
+
+    .panel:nth-child(2),.panel:nth-child(3),.panel:nth-child(4),.panel:nth-child(5){
+        display:none;
+    }
+}
+
